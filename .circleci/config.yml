@@ -28,6 +28,8 @@ jobs:
           command: stack exec site build
       - persist_to_workspace:
           root: _site
+          paths:
+            - *
 
   deploy:
     docker:
