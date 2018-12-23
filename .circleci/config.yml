@@ -18,6 +18,7 @@ jobs:
       - run:
           name: Build blog
           command: stack exec site build
+      - run: mkdir /tmp/elliotdavies-co-uk
       - persist_to_workspace:
           root: /tmp/elliotdavies-co-uk
           paths:
