@@ -1,0 +1,48 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: fpco/stack-build:lts
+    steps:
+      - checkout
+      - restore_cache:
+          name: Restore cached dependencies
+          keys:
+             - cci-elliotdavies-co-uk-{{ checksum "package.yaml" }}
+      - run:
+          name: Resolve / update dependencies
+          command: stack setup
+      - run:
+          name: Build Hakyll
+          command: stack build --fast
+      - run:
+          name: Build blog
+          command: stack exec site build
+      - save_cache:
+          name: Cache Dependencies
+          key: cci-elliotdavies-co-uk-{{ checksum "package.yaml" }}
+          paths:
+            - ".stack-work"
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    working_directory: ~/circleci-docs
+    steps:
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: aws s3 sync _site s3://elliotdavies.co.uk/blog --delete
+
+workflows:
+  version: 2.1
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
