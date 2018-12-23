@@ -27,10 +27,12 @@ jobs:
           name: Build blog
           command: stack exec site build
       - run: mkdir -p /tmp/elliotdavies-co-uk/_site
+      - run: ls -alR /tmp/elliotdavies-co-uk
+      - run: ls -alR ./
       - persist_to_workspace:
           root: /tmp/elliotdavies-co-uk
           paths:
-            - _site/*
+            - _site
       - run: ls -alR /tmp/elliotdavies-co-uk
   deploy:
     docker:
