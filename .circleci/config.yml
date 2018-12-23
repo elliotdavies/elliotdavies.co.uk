@@ -6,9 +6,9 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          name: Restore cached dependencies
-          keys:
-             - cci-elliotdavies-co-uk-{{ checksum "stack.yaml" }}
+          key: stack-{{ checksum "stack.yaml" }}
+      - restore_cache:
+          key: stack-{{ checksum "stack.yaml" }}-{{ checksum "elliotdavies-co-uk.cabal" }}
       - run:
           name: Resolve / update dependencies
           command: stack setup
@@ -16,8 +16,11 @@ jobs:
           name: Build Hakyll
           command: stack build --fast
       - save_cache:
-          name: Cache Dependencies
-          key: cci-elliotdavies-co-uk-{{ checksum "stack.yaml" }}
+          key: stack-{{ checksum "stack.yaml" }}
+          paths:
+            - "~/.stack"
+      - save_cache:
+          key: stack-{{ checksum "stack.yaml" }}--{{ checksum "elliotdavies-co-uk.cabal" }}
           paths:
             - ".stack-work"
       - run:
