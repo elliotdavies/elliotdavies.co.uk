@@ -18,6 +18,10 @@ jobs:
       - run:
           name: Build blog
           command: stack exec site build
+      - persist_to_workspace:
+          root: /tmp/elliotdavies-co-uk
+          paths:
+            - _site
       - save_cache:
           name: Cache Dependencies
           key: cci-elliotdavies-co-uk-{{ checksum "package.yaml" }}
@@ -26,14 +30,15 @@ jobs:
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
-    working_directory: ~/circleci-docs
     steps:
+      - attach_workspace:
+          at: /tmp/elliotdavies-co-uk
       - run:
           name: Install awscli
           command: sudo pip install awscli
       - run:
           name: Deploy to S3
-          command: aws s3 sync _site s3://elliotdavies.co.uk/blog --delete
+          command: aws s3 sync /tmp/elliotdavies-co-uk/_site s3://elliotdavies.co.uk/blog --delete
 
 workflows:
   version: 2.1
