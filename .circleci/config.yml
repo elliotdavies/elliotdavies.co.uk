@@ -15,19 +15,19 @@ jobs:
       - run:
           name: Build Hakyll
           command: stack build --fast
-      - run:
-          name: Build blog
-          command: stack exec site build
-      - run: mkdir /tmp/elliotdavies-co-uk
-      - persist_to_workspace:
-          root: /tmp/elliotdavies-co-uk
-          paths:
-            - _site
       - save_cache:
           name: Cache Dependencies
           key: cci-elliotdavies-co-uk-{{ checksum "stack.yaml" }}
           paths:
             - ".stack-work"
+      - run:
+          name: Build blog
+          command: stack exec site build
+      - run: mkdir -p /tmp/elliotdavies-co-uk/_site
+      - persist_to_workspace:
+          root: /tmp/elliotdavies-co-uk
+          paths:
+            - _site
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
