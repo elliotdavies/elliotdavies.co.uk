@@ -41,8 +41,6 @@ jobs:
           name: Install awscli
           command: sudo pip install awscli
       - run:
-          command: ls -alR /tmp/elliotdavies-co-uk/
-      - run:
           name: Deploy to S3
           command: aws s3 sync /tmp/elliotdavies-co-uk/ s3://elliotdavies.co.uk/blog --delete
 
