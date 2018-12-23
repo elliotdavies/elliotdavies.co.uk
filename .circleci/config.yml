@@ -30,7 +30,8 @@ jobs:
       - persist_to_workspace:
           root: /tmp/elliotdavies-co-uk
           paths:
-            - _site
+            - _site/*
+      - run: ls -alR /tmp/elliotdavies-co-uk
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
@@ -41,7 +42,7 @@ jobs:
           name: Install awscli
           command: sudo pip install awscli
       - run:
-          command: ls -al /tmp/elliotdavies-co-uk/_site
+          command: ls -alR /tmp/elliotdavies-co-uk/
       - run:
           name: Deploy to S3
           command: aws s3 sync /tmp/elliotdavies-co-uk/_site/ s3://elliotdavies.co.uk/blog --delete
