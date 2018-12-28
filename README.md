@@ -1,6 +1,6 @@
 # elliotdavies.co.uk
 
-This is the code for my personal website and blog at [http://elliotdavies.co.uk]. The site is built with [Hakyll](https://jaspervdj.be/hakyll/), a static site generator written in Haskell.
+This is the code for my personal website and blog at http://elliotdavies.co.uk. The site is built with [Hakyll](https://jaspervdj.be/hakyll/), a static site generator written in Haskell.
 
 [Stack](https://docs.haskellstack.org/en/stable/README) is used to manage the Haskell code and binaries.
 
