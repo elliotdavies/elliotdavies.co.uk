@@ -1,11 +1,15 @@
 <article>
-    <section class="header">
-        Posted on $date$
-        $if(author)$
-            by $author$
-        $endif$
-    </section>
-    <section>
-        $body$
-    </section>
+  <section class="header">
+    <h1>$title$</h1>
+    <div class="meta">
+      Posted on $date$
+      $if(author)$
+        by $author$
+      $endif$
+    </div>
+  </section>
+
+  <section>
+    $body$
+  </section>
 </article>
