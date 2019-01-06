@@ -62,11 +62,17 @@ main h1 {
   color: #306BAC;
 }
 
+article .meta {
+  font-size: 0.8em;
+}
+
 footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 2rem;
   padding: 0.5rem 0;
   border-top: 1px solid #000;
   font-size: 0.8rem;
-  text-align: right;
   color: #555;
 }
