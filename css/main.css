@@ -35,6 +35,7 @@ a, a: visited {
 
 main h1 {
   font-size: 2.5em;
+  line-height: 1;
   margin: 1em 0 0.5em 0;
 }
 
@@ -64,6 +65,10 @@ main h1 {
 
 article .meta {
   font-size: 0.8em;
+}
+
+article pre {
+  overflow-x: scroll;
 }
 
 footer {
