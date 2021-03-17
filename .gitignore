@@ -1,4 +1,2 @@
-*.swp
-.stack-work
-_site
-_cache
+dist
+node_modules
