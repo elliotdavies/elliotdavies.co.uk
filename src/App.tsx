@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { FC } from "react";
 
-const App = () =>
+const App: FC = () => (
   <main>
     <h1>
       <pre>elliot :: SoftwareEngineer</pre>
     </h1>
   </main>
+);
 
-export default App
+export default App;

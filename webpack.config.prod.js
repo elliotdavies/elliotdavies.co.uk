@@ -1,29 +1,19 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const baseConfig = require("./webpack.config.base.js");
+
+const path = require("path");
+
+const outputPath = path.join(process.cwd(), "build");
 
 module.exports = {
-  entry: './src/static',
+  ...baseConfig,
 
-  mode: 'production',
+  mode: "production",
 
-  module: {
-    rules: [
-      { test: /\.js(x)$/,
-        use: [
-          { loader: require.resolve('babel-loader')
-          , options: {
-              presets: ['@babel/preset-react']
-            }
-          }
-        ]
-      }
-    ]
+  entry: "./src/static",
+
+  output: {
+    ...baseConfig.output,
+
+    path: outputPath,
   },
-
-  plugins: [
-    new HtmlWebpackPlugin()
-  ],
-
-  resolve: {
-    extensions: ['.jsx','.js']
-  }
-}
+};
