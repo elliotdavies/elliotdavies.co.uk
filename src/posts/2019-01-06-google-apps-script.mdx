@@ -1,12 +1,10 @@
----
-title: Reacting to Google Form submissions with Apps Script
----
+# Reacting to Google Form submissions with Apps Script
 
 Each year the [Student Publication Association](http://spajournalism.com) hosts an annual conference, SPANC, which includes an awards ceremony for prizes such as Best Publication, Best Journalist, and so on. In previous years students have entered the awards by emailing in PDFs, requiring the organisers to manually download thousands of files and sort them into Google Drive folders to be shared with the judges. I was asked to see if we could automate this process.
 
 To replace the email system with something more structured, a Google Form was the obvious choice: it allows file uploads, and will automatically populate a spreadsheet with all the responses. However, it can only lump all of the uploaded files into a single Drive folder, meaning they would still need to be sorted manually.
 
-### Apps Script to the rescue
+## Apps Script to the rescue
 
 It's not particularly well advertised, but Google has a solution to this kind of problem: [Apps Script](https://developers.google.com/apps-script), which lets you programmatically access Google apps such as Docs, Sheets, and Drive by writing JavaScript that runs in Google's cloud. (As far as I can tell, the language available is a subset of ES5 plus some globally available API objects, such as `DriveApp` and `DocumentApp`, which are supplied by Google.)
 
@@ -30,7 +28,7 @@ Once everything's lined up, `myFolderName.addFile(...)` will add the file to the
 
 That's about it! You can see the full code on GitHub [here](https://github.com/spajournalism/spanc-submissions).
 
-### Debugging
+## Debugging
 
 The most annoying thing about the development process was having to repeatedly complete the form (including the file uploads) to trigger the script. I'd be interested to know if there's an easier way to do this, though the [docs](https://developers.google.com/apps-script/guides/triggers/installable#restrictions) say that API requests and scripts won't cause triggers to run so it may not be possible to automate.
 

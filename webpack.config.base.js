@@ -1,5 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const babelLoader = require.resolve("babel-loader");
+const babelOptions = {
+  presets: ["@babel/preset-react"],
+};
+
 module.exports = {
   output: {
     publicPath: "/",
@@ -9,15 +14,23 @@ module.exports = {
     rules: [
       {
         test: /\.(t|j)sx?$/,
-        loader: require.resolve("babel-loader"),
-        options: {
-          presets: ["@babel/preset-react"],
-        },
+        loader: babelLoader,
+        options: babelOptions,
       },
       {
         test: /\.tsx?$/,
         loader: require.resolve("ts-loader"),
         exclude: /node_modules/,
+      },
+      {
+        test: /\.mdx?$/,
+        use: [
+          {
+            loader: babelLoader,
+            options: babelOptions,
+          },
+          require.resolve("@mdx-js/loader"),
+        ],
       },
     ],
   },
