@@ -9,8 +9,11 @@ const posts: Record<string, Post> = {};
 let required = require.context("./posts", true, /\.mdx$/);
 required.keys().forEach((k) => {
   const { default: component, title, date } = required(k);
-  posts[k] = { component, title, date };
+  const key = k.replace(/^\.\//, "").replace(/\.mdx$/, "");
+  posts[key] = { component, title, date };
 });
+
+console.log(posts);
 
 const Post: FC<{ post: Post }> = ({ post }) => (
   <main>

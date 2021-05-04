@@ -9,8 +9,6 @@ module.exports = {
 
   mode: "development",
 
-  entry: "./src/dev",
-
   output: {
     ...baseConfig.output,
 
@@ -22,5 +20,6 @@ module.exports = {
     contentBase: outputPath,
     compress: true,
     hot: true,
+    historyApiFallback: true,
   },
 };

@@ -6,6 +6,8 @@ const babelOptions = {
 };
 
 module.exports = {
+  entry: "./src/index",
+
   output: {
     publicPath: "/",
   },

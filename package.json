@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "watch": "webpack serve --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js",
+    "build": "webpack --config webpack.config.prod.js && react-snap",
     "format": "prettier --write 'src/**/*.{tsx,ts,js,jsx}' 'webpack.*.js'"
   },
   "devDependencies": {
@@ -18,8 +18,10 @@
     "@types/react-router-dom": "^5.1.7",
     "@types/webpack-env": "^1.16.0",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "html-webpack-plugin": "^5.3.1",
     "prettier": "^2.2.1",
+    "react-snap": "^1.23.0",
     "ts-loader": "^8.0.18",
     "typescript": "^4.2.3",
     "webpack": "^5.26.2",

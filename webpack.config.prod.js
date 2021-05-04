@@ -1,3 +1,4 @@
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const baseConfig = require("./webpack.config.base.js");
 
 const path = require("path");
@@ -9,11 +10,11 @@ module.exports = {
 
   mode: "production",
 
-  entry: "./src/static",
-
   output: {
     ...baseConfig.output,
 
     path: outputPath,
   },
+
+  plugins: [...baseConfig.plugins, new CleanWebpackPlugin()],
 };
