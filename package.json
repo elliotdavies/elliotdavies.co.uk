@@ -12,6 +12,8 @@
   },
   "devDependencies": {
     "@babel/preset-react": "^7.12.13",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
     "@mdx-js/loader": "^1.6.22",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",

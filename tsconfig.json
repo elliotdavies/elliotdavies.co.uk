@@ -3,6 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "module": "esNext",
+    "moduleResolution": "node",
     "strict": true,
     "target": "esNext"
   },

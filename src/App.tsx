@@ -1,8 +1,12 @@
 import React, { FC } from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
+import { GlobalStyles } from "./components/Layout";
+import PostTemplate from "./components/PostTemplate";
+
 import Home from "./pages/Home";
 import NotFound from "./pages/404";
+
 import { Post } from "./types";
 
 const posts: Record<string, Post> = {};
@@ -14,41 +18,28 @@ required.keys().forEach((k) => {
   posts[key] = { component, title, date };
 });
 
-const Post: FC<{ post: Post }> = ({ post }) => (
-  <main>
-    <article>
-      <post.component />
-    </article>
-
-    <hr />
-
-    <aside>
-      <div>
-        <Link to="/">Home</Link>
-      </div>
-      <div>Posted on {post.date}</div>
-    </aside>
-  </main>
-);
-
 const App: FC = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/">
-        <Home posts={posts} />
-      </Route>
+  <>
+    <GlobalStyles />
 
-      {Object.entries(posts).map(([k, post]) => (
-        <Route exact key={k} path={`/${k}`}>
-          <Post post={post} />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Home posts={posts} />
         </Route>
-      ))}
 
-      <Route path="*">
-        <NotFound />
-      </Route>
-    </Switch>
-  </BrowserRouter>
+        {Object.entries(posts).map(([k, post]) => (
+          <Route exact key={k} path={`/${k}`}>
+            <PostTemplate post={post} />
+          </Route>
+        ))}
+
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  </>
 );
 
 export default App;
