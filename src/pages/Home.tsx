@@ -1,15 +1,7 @@
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
-import { Post } from "./types";
-
-const posts: Record<string, Post> = {};
-
-let required = require.context("./posts", true, /\.mdx$/);
-required.keys().forEach((k) => {
-  const { default: component, title, date } = required(k);
-  posts[k] = { component, title, date };
-});
+import { Post } from "../types";
 
 const Home: FC<{ posts: Record<string, Post> }> = ({ posts }) => (
   <main>

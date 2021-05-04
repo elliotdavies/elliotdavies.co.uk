@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
-import Home from "./Home";
+import Home from "./pages/Home";
+import NotFound from "./pages/404";
 import { Post } from "./types";
 
 const posts: Record<string, Post> = {};
@@ -12,8 +13,6 @@ required.keys().forEach((k) => {
   const key = k.replace(/^\.\//, "").replace(/\.mdx$/, "");
   posts[key] = { component, title, date };
 });
-
-console.log(posts);
 
 const Post: FC<{ post: Post }> = ({ post }) => (
   <main>
@@ -44,6 +43,10 @@ const App: FC = () => (
           <Post post={post} />
         </Route>
       ))}
+
+      <Route path="*">
+        <NotFound />
+      </Route>
     </Switch>
   </BrowserRouter>
 );
