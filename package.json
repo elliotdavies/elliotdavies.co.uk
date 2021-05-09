@@ -1,0 +1,44 @@
+{
+  "name": "elliotdavies.co.uk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:elliotdavies/elliotdavies.co.uk.git",
+  "author": "Elliot Davies <elliot.a.davies@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "webpack serve --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js && react-snap",
+    "format": "prettier --write 'src/**/*.{tsx,ts,js,jsx}' 'webpack.*.js'"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.12.13",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.3.0",
+    "@mdx-js/loader": "^1.6.22",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/webpack-env": "^1.16.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "html-webpack-plugin": "^5.3.1",
+    "prettier": "^2.2.1",
+    "react-snap": "^1.23.0",
+    "ts-loader": "^8.0.18",
+    "typescript": "^4.2.3",
+    "webpack": "^5.26.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "reactSnap": {
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  }
+}

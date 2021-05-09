@@ -2,32 +2,17 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: fpco/stack-build:lts
+      - image: buildkite/puppeteer:latest
     steps:
       - checkout
-      - restore_cache:
-          key: stack-{{ checksum "stack.yaml" }}
-      - restore_cache:
-          key: stack-{{ checksum "stack.yaml" }}-{{ checksum "elliotdavies-co-uk.cabal" }}
       - run:
-          name: Resolve / update dependencies
-          command: stack setup
+          name: Yarn
+          command: yarn install
       - run:
-          name: Build Hakyll
-          command: stack build --fast
-      - save_cache:
-          key: stack-{{ checksum "stack.yaml" }}
-          paths:
-            - "~/.stack"
-      - save_cache:
-          key: stack-{{ checksum "stack.yaml" }}-{{ checksum "elliotdavies-co-uk.cabal" }}
-          paths:
-            - ".stack-work"
-      - run:
-          name: Build blog
-          command: stack exec site build
+          name: Build
+          command: yarn build
       - persist_to_workspace:
-          root: _site
+          root: build
           paths:
             - ./*
 

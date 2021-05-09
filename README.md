@@ -1,37 +1,24 @@
 # elliotdavies.co.uk
 
-This is the code for my personal website and blog at http://elliotdavies.co.uk. The site is built with [Hakyll](https://jaspervdj.be/hakyll/), a static site generator written in Haskell.
+This is the code for my personal website and blog at [elliotdavies.co.uk](http://elliotdavies.co.uk).
 
-[Stack](https://docs.haskellstack.org/en/stable/README) is used to manage the Haskell code and binaries.
+## Working on this project
 
-
-## Site development
-
-To watch for changes and recompile the site while writing blog posts, CSS, etc:
+Install dependencies:
 
 ```
-stack exec site watch
+yarn
 ```
 
-To compile the site:
+
+Run the site locally:
 
 ```
-stack exec site build
+yarn watch
 ```
 
-The built files will be output to `_site`.
-
-
-## Hakyll development
-
-To watch for changes to the Hakyll configuration itself:
+Build the production version of the site:
 
 ```
-stack build --fast --file-watch
-```
-
-To rebuild the Hakyll `site` binary:
-
-```
-stack build
+yarn build
 ```
