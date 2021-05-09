@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 
 import { Post } from "../types";
-import { systemMono, Main, Footer } from "./Layout";
+import { colours, systemMono, Main, Footer } from "./Layout";
 
-const Header = styled.header`
-  margin-bottom: 1rem;
+const Header = styled.header``;
+
+const ArticleDate = styled.p`
+  color: ${colours.grey};
 `;
 
 const Article = styled.article`
@@ -26,10 +28,11 @@ const PostTemplate: FC<{ post: Post }> = ({
     <Main>
       <Article>
         <Header>
-          Posted on <time>{formattedDate}</time>
+          <h1>{title}</h1>
+          <ArticleDate>
+            Posted on <time>{formattedDate}</time>
+          </ArticleDate>
         </Header>
-
-        <h1>{title}</h1>
 
         <Content />
 

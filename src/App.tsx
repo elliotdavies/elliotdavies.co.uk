@@ -1,5 +1,11 @@
-import React, { FC } from "react";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import React, { FC, useEffect } from "react";
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  Link,
+  useLocation,
+} from "react-router-dom";
 
 import { GlobalStyles } from "./components/Layout";
 import PostTemplate from "./components/PostTemplate";
@@ -18,28 +24,44 @@ required.keys().forEach((k) => {
   posts[key] = { component, title, date };
 });
 
-const App: FC = () => (
-  <>
-    <GlobalStyles />
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
 
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <Home posts={posts} />
-        </Route>
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
-        {Object.entries(posts).map(([k, post]) => (
-          <Route exact key={k} path={`/${k}`}>
-            <PostTemplate post={post} />
+  return null;
+};
+
+const App: FC = () => {
+  return (
+    <>
+      <GlobalStyles />
+
+      <BrowserRouter>
+        <ScrollToTop />
+
+        <Switch>
+          <Route exact path="/">
+            <Home posts={posts} />
           </Route>
-        ))}
 
-        <Route path="*">
-          <NotFound />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  </>
-);
+          {Object.entries(posts).map(([k, post]) => (
+            <Route exact key={k} path={`/${k}`}>
+              <PostTemplate post={post} />
+            </Route>
+          ))}
+
+          <Route path="*">
+            <NotFound />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </>
+  );
+};
 
 export default App;

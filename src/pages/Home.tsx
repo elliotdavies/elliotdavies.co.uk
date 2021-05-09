@@ -10,13 +10,13 @@ const H1 = styled.h1`
   margin-bottom: 1rem;
   color: #141b41;
 
-  @media screen and (min-width: ${breakpoints.tablet}) {
-    font-size: 2.2rem;
-  }
-
   pre {
     margin: 0;
     padding: 0;
+
+    @media screen and (min-width: ${breakpoints.tablet}) {
+      font-size: 2.2rem;
+    }
   }
 `;
 
@@ -30,23 +30,19 @@ const Tablet = styled.span`
 
 const Home: FC<{ posts: Record<string, Post> }> = ({ posts }) => (
   <Main>
-    <H1>
-      <pre>
-        elliot <Tablet>:: SoftwareEngineer</Tablet>
-      </pre>
-    </H1>
+    <H1>Elliot Davies</H1>
 
     <p>
-      Hello! I'm the lead frontend engineer at{" "}
+      Hello! I'm a senior frontend engineer at{" "}
       <a href="https://www.habito.com/">Habito</a>, the UK's leading digital
       mortgage broker.
     </p>
 
     <p>
-      I'm especially interested in web performance, accessibility and
-      micro-frontend architectures. Since functional programming is the future,
-      it's also pretty cool that Habito uses a mix of TypeScript, PureScript and
-      Haskell.
+      I deal with interesting problems around web performance, accessibility,
+      design systems and micro-frontend architectures. I'm also interested in
+      static type systems and functional programming; at Habito we use a mix of
+      TypeScript, PureScript and Haskell.
     </p>
 
     <p>

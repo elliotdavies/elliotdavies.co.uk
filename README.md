@@ -22,9 +22,3 @@ Build the production version of the site:
 ```
 yarn build
 ```
-
-## TODO
-
-- Nicer styling
-- Google Analytics
-- Performance improvements

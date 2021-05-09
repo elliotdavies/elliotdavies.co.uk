@@ -19,6 +19,7 @@ export const systemMono = css`
 
 export const colours = {
   offBlack: "#151515",
+  grey: "#707070",
   link: "#5291F5",
 };
 
@@ -39,7 +40,12 @@ export const GlobalStyles = () => (
         line-height: 1.75;
       }
 
-      h1,
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+      }
+
       h2,
       h3,
       h4,
@@ -50,25 +56,47 @@ export const GlobalStyles = () => (
         line-height: 1.3;
       }
 
-      /* Typography scale thanks to https://type-scale.com */
+      /* Typography scales thanks to https://type-scale.com */
       h1 {
-        font-size: 3.052rem;
+        /* "Major second" scale */
+        font-size: 1.802rem;
+
+        @media screen and (min-width: ${breakpoints.tablet}) {
+          /* "Major third" scale */
+          font-size: 3.052rem;
+        }
       }
 
       h2 {
-        font-size: 2.441rem;
+        font-size: 1.602rem;
+
+        @media screen and (min-width: ${breakpoints.tablet}) {
+          font-size: 2.441rem;
+        }
       }
 
       h3 {
-        font-size: 1.953rem;
+        font-size: 1.424rem;
+
+        @media screen and (min-width: ${breakpoints.tablet}) {
+          font-size: 1.953rem;
+        }
       }
 
       h4 {
-        font-size: 1.563rem;
+        font-size: 1.266rem;
+
+        @media screen and (min-width: ${breakpoints.tablet}) {
+          font-size: 1.563rem;
+        }
       }
 
       h5 {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
+
+        @media screen and (min-width: ${breakpoints.tablet}) {
+          font-size: 1.25rem;
+        }
       }
 
       h6 {
