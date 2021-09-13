@@ -33,16 +33,17 @@ const Home: FC<{ posts: Record<string, Post> }> = ({ posts }) => (
     <H1>Elliot Davies</H1>
 
     <p>
-      Hello! I'm a senior frontend engineer at{" "}
-      <a href="https://www.habito.com/">Habito</a>, the UK's leading digital
-      mortgage broker.
+      Hello! I'm a frontend software engineer with particular interests in web
+      performance, design systems, static type systems, and functional
+      programming.
     </p>
 
     <p>
-      I deal with interesting problems around web performance, accessibility,
-      design systems and micro-frontend architectures. I'm also interested in
-      static type systems and functional programming; at Habito we use a mix of
-      TypeScript, PureScript and Haskell.
+      Until recently I was a senior engineer at{" "}
+      <a href="https://www.habito.com/">Habito</a>, the UK's leading digital
+      mortgage broker, where I solved interesting problems like building a
+      design system, implementing a micro-frontend architecture, and web
+      accessibility. I used a mix of TypeScript, PureScript and Haskell.
     </p>
 
     <p>
