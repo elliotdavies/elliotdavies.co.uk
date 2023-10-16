@@ -41,9 +41,9 @@ export const GlobalStyles = () => (
       }
 
       h1 {
-        margin-top: 0;
-        margin-bottom: 0.8rem;
-        line-height: 1.3;
+        margin-block-start: 0;
+        margin-block-end: 0.8rem;
+        line-height: 1.1;
       }
 
       h2,
@@ -51,9 +51,9 @@ export const GlobalStyles = () => (
       h4,
       h5,
       h6 {
-        margin-top: 2rem;
-        margin-bottom: 0.8rem;
-        line-height: 1.3;
+        margin-block-start: 2rem;
+        margin-block-end: 0.8rem;
+        line-height: 1.1;
       }
 
       /* Typography scales thanks to https://type-scale.com */
@@ -105,8 +105,8 @@ export const GlobalStyles = () => (
 
       p {
         ${systemSerif}
-        margin-top: 0;
-        margin-bottom: 1.5rem;
+        margin-block-start: 0;
+        margin-block-end: 1.5rem;
       }
 
       a,
@@ -121,8 +121,8 @@ export const GlobalStyles = () => (
 
       pre {
         ${systemMono}
-        margin: 1rem 0;
-        padding: 0 0.5rem;
+        margin-block: 1rem;
+        padding-inline: 0.5rem;
       }
 
       code {
@@ -132,10 +132,10 @@ export const GlobalStyles = () => (
 
       ul,
       ol {
-        margin-bottom: 1.5rem;
+        margin-block-end: 1.5rem;
 
         li {
-          margin-bottom: 0.8rem;
+          margin-block-end: 0.8rem;
         }
       }
     `}
@@ -144,7 +144,8 @@ export const GlobalStyles = () => (
 
 export const Main = styled.main`
   max-width: 35rem;
-  margin: 0 auto;
+  margin-block: 0;
+  margin-inline: auto;
   padding: 1rem;
 
   @media screen and (min-width: ${breakpoints.tablet}) {
@@ -153,7 +154,7 @@ export const Main = styled.main`
 `;
 
 export const Footer = styled.footer`
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid black;
+  margin-block-start: 1rem;
+  padding-block-start: 1rem;
+  border-block-start: 1px solid black;
 `;

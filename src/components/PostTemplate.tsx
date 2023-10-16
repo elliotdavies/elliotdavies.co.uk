@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 
 import { Post } from "../types";
-import { colours, systemMono, Main, Footer } from "./Layout";
+import { colours, Main, Footer } from "./Layout";
 
 const Header = styled.header``;
 

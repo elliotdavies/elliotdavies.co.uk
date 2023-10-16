@@ -7,7 +7,7 @@ import { Main, breakpoints } from "../components/Layout";
 import { Post } from "../types";
 
 const H1 = styled.h1`
-  margin-bottom: 1rem;
+  margin-block-end: 1rem;
   color: #141b41;
 
   pre {
@@ -39,11 +39,19 @@ const Home: FC<{ posts: Record<string, Post> }> = ({ posts }) => (
     </p>
 
     <p>
-      Until recently I was a senior engineer at{" "}
-      <a href="https://www.habito.com/">Habito</a>, the UK's leading digital
-      mortgage broker, where I solved interesting problems like building a
-      design system, implementing a micro-frontend architecture, and web
-      accessibility. I used a mix of TypeScript, PureScript and Haskell.
+      At the moment I'm a senior engineer and team lead at{" "}
+      <a href="https://ki-insurance.com/">Ki Insurance</a>, the first
+      algorithmically-driven Lloyd's of London syndicate. I also worked for Ki's
+      parent company, <a href="https://www.britinsurance.com/">Brit</a>, where I
+      led the frontend development of several internal projects.
+    </p>
+
+    <p>
+      Before that I was a senior engineer at{" "}
+      <a href="https://www.habito.com/">Habito</a>, a leading digital mortgage
+      broker, where I solved interesting problems like building a design system,
+      implementing a micro-frontend architecture, and web accessibility. I used
+      a mix of TypeScript, PureScript and Haskell.
     </p>
 
     <p>
@@ -65,9 +73,8 @@ const Home: FC<{ posts: Record<string, Post> }> = ({ posts }) => (
     </p>
 
     <p>
-      You can find me on <a href="https://github.com/elliotdavies">GitHub</a>,{" "}
-      <a href="https://twitter.com/elimoto">Twitter</a> or{" "}
-      <a href="https://linkedin.com/in/elliotdavies">LinkedIn</a>.
+      You can find me on <a href="https://github.com/elliotdavies">GitHub</a>{" "}
+      and <a href="https://linkedin.com/in/elliotdavies">LinkedIn</a>.
     </p>
 
     <h2>Posts and notes</h2>
