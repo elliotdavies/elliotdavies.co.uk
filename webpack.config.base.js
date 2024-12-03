@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const babelLoader = require.resolve("babel-loader");
 const babelOptions = {
@@ -41,6 +42,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html",
     }),
+
+    new CopyPlugin({
+      patterns: [
+        { from: ".well-known", to: ".well-known" },
+      ],
+    })
   ],
 
   resolve: {
