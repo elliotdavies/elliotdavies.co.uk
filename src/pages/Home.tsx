@@ -39,7 +39,14 @@ const Home: FC<{ posts: Record<string, Post> }> = ({ posts }) => (
     </p>
 
     <p>
-      At the moment I'm a senior engineer and team lead at{" "}
+      At the moment I'm a senior engineer at{" "}
+      <a href="https://www.goodnotes.com/">Goodnotes</a>, working on improving
+      the text editing experience for one of the world's most popular
+      note-taking apps.
+    </p>
+
+    <p>
+      Previously I was a team lead at{" "}
       <a href="https://ki-insurance.com/">Ki Insurance</a>, the first
       algorithmically-driven Lloyd's of London syndicate. I also worked for Ki's
       parent company, <a href="https://www.britinsurance.com/">Brit</a>, where I
@@ -47,15 +54,8 @@ const Home: FC<{ posts: Record<string, Post> }> = ({ posts }) => (
     </p>
 
     <p>
-      Before that I was a senior engineer at{" "}
-      <a href="https://www.habito.com/">Habito</a>, a leading digital mortgage
-      broker, where I solved interesting problems like building a design system,
-      implementing a micro-frontend architecture, and web accessibility. I used
-      a mix of TypeScript, PureScript and Haskell.
-    </p>
-
-    <p>
-      From 2015-18 I was a full-stack JavaScript developer at{" "}
+      Further back I worked for <a href="https://www.habito.com/">Habito</a>, a
+      digital mortgage broker, and{" "}
       <a href="https://medium.com/digital-times">The Times</a> of London, where
       I built tools for journalists and editors to use in the newsroom.
     </p>
@@ -79,7 +79,7 @@ const Home: FC<{ posts: Record<string, Post> }> = ({ posts }) => (
 
     <h2>Posts and notes</h2>
     <p>
-      About once a year I might write a blog post. Here are the most recent:
+      About once a decade I might write a blog post. Here are the most recent:
     </p>
 
     <ul>
