@@ -6,6 +6,7 @@ export default defineConfig({
   build: {
     format: 'file'
   },
+  trailingSlash: 'never',
   vite: {
     css: {
       postcss: {

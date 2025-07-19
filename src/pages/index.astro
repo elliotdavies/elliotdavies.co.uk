@@ -64,7 +64,7 @@ const sortedPosts = posts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<
   <ul>
     {sortedPosts.map((post: CollectionEntry<'posts'>) => (
       <li>
-        <a href={`/${post.slug}`}>{post.data.title}</a>
+        <a href={`/${post.slug}.html`}>{post.data.title}</a>
       </li>
     ))}
   </ul>
