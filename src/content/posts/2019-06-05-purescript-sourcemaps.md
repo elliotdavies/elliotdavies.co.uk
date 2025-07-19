@@ -1,5 +1,7 @@
-export const title = "Generating source maps for PureScript bundles"
-export const date = "2019-06-05"
+---
+title: "Generating source maps for PureScript bundles"
+date: "2019-06-05"
+---
 
 If you're building a frontend app with PureScript, you might want to analyse the resulting JavaScript bundle to see which Purescript modules generated the most code. The tooling doesn't really advertise it, but it is possible to generate source maps for this purpose.
 
