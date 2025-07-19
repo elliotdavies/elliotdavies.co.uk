@@ -82,4 +82,25 @@ const sortedPosts = posts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<
 </BaseLayout>
 
 <style>
+  nav ul {
+    padding-inline-start: 0;
+    list-style: none;
+  }
+
+  nav li {
+    margin-block-end: var(--space-sm);
+    padding-inline-start: var(--space-md);
+    border-inline-start: 2px solid var(--color-border-light);
+    transition: border-color 0.2s ease;
+  }
+
+  nav li:hover {
+    border-inline-start-color: var(--color-accent);
+  }
+
+  @media screen and (min-width: 768px) {
+    nav li {
+      padding-inline-start: var(--space-lg);
+    }
+  }
 </style>
