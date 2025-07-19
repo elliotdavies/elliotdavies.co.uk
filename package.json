@@ -9,7 +9,7 @@
     "watch": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "format": "prettier --write 'src/**/*.{astro,ts,js}'"
+    "format": "prettier --write 'src/**/*.{ts,js,md}' astro.config.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

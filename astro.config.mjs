@@ -1,19 +1,17 @@
-import { defineConfig } from 'astro/config';
-import autoprefixer from 'autoprefixer';
+import { defineConfig } from "astro/config";
+import autoprefixer from "autoprefixer";
 
 export default defineConfig({
-  site: 'https://elliotdavies.co.uk',
+  site: "https://elliotdavies.co.uk",
   build: {
-    format: 'file'
+    format: "file",
   },
-  trailingSlash: 'never',
+  trailingSlash: "never",
   vite: {
     css: {
       postcss: {
-        plugins: [
-          autoprefixer
-        ]
-      }
-    }
-  }
+        plugins: [autoprefixer],
+      },
+    },
+  },
 });

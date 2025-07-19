@@ -23,7 +23,6 @@ In this example the bundle and its source map will be output as `bundle.js` and 
 
 The `--output` option is required in order for `--source-maps` to work.
 
-
 ## With Webpack and [purs-loader](https://github.com/ethul/purs-loader)
 
 Pass the `bundle` and `pscBundleArgs` options in your Webpack configuration:
@@ -43,7 +42,6 @@ Pass the `bundle` and `pscBundleArgs` options in your Webpack configuration:
 
 By default, the `bundle.js` and `bundle.js.map` will be placed in the `output` directory.
 
-
 ## With [Pulp](https://github.com/purescript-contrib/pulp)
 
 ```bash
@@ -51,7 +49,6 @@ pulp build --to bundle.js --source-maps
 ```
 
 Note that the `--to` option is required for `--source-maps` to work.
-
 
 ## Analysing the source maps
 
