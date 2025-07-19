@@ -17,55 +17,66 @@ const sortedPosts = posts.sort((a: CollectionEntry<'posts'>, b: CollectionEntry<
     programming.
   </p>
 
-  <p>
-    At the moment I'm a senior engineer at{" "}
-    <a href="https://www.goodnotes.com/">Goodnotes</a>, working on improving
-    the text editing experience for one of the world's most popular
-    note-taking apps.
-  </p>
+  <section aria-labelledby="about-heading">
+    <h2 id="about-heading" class="visually-hidden">About</h2>
 
-  <p>
-    Previously I was a team lead at{" "}
-    <a href="https://ki-insurance.com/">Ki Insurance</a>, the first
-    algorithmically-driven Lloyd's of London syndicate. I also worked for Ki's
-    parent company, <a href="https://www.britinsurance.com/">Brit</a>, where I
-    led the frontend development of several internal projects.
-  </p>
+    <p>
+      At the moment I'm a senior engineer at{" "}
+      <a href="https://www.goodnotes.com/">Goodnotes</a>, working on improving
+      the text editing experience for one of the world's most popular
+      note-taking apps.
+    </p>
 
-  <p>
-    Further back I worked for <a href="https://www.habito.com/">Habito</a>, a
-    digital mortgage broker, and{" "}
-    <a href="https://medium.com/digital-times">The Times</a> of London, where
-    I built tools for journalists and editors to use in the newsroom.
-  </p>
+    <p>
+      Previously I was a team lead at{" "}
+      <a href="https://ki-insurance.com/">Ki Insurance</a>, the first
+      algorithmically-driven Lloyd's of London syndicate. I also worked for Ki's
+      parent company, <a href="https://www.britinsurance.com/">Brit</a>, where I
+      led the frontend development of several internal projects.
+    </p>
 
-  <p>
-    I was also involved for quite a while in supporting the next generation of
-    journalists as a trustee of the{" "}
-    <a href="http://spajournalism.com/">Student Publication Association</a>,
-    the UK's national body for student newspapers and magazines.
-  </p>
+    <p>
+      Further back I worked for <a href="https://www.habito.com/">Habito</a>, a
+      digital mortgage broker, and{" "}
+      <a href="https://medium.com/digital-times">The Times</a> of London, where
+      I built tools for journalists and editors to use in the newsroom.
+    </p>
 
-  <p>
-    Outside of work I spend a lot of time{" "}
-    <a href="https://www.instagram.com/elliot.a.davies/">cooking</a>.
-  </p>
+    <p>
+      I was also involved for quite a while in supporting the next generation of
+      journalists as a trustee of the{" "}
+      <a href="http://spajournalism.com/">Student Publication Association</a>,
+      the UK's national body for student newspapers and magazines.
+    </p>
 
-  <p>
-    You can find me on <a href="https://github.com/elliotdavies">GitHub</a>{" "}
-    and <a href="https://linkedin.com/in/elliotdavies">LinkedIn</a>.
-  </p>
+    <p>
+      Outside of work I spend a lot of time{" "}
+      <a href="https://www.instagram.com/elliot.a.davies/">cooking</a>.
+    </p>
+  </section>
 
-  <h2>Posts and notes</h2>
-  <p>
-    About once a decade I might write a blog post. Here are the most recent:
-  </p>
+  <section aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="visually-hidden">Contact</h2>
+    <p>
+      You can find me on <a href="https://github.com/elliotdavies">GitHub</a>{" "}
+      and <a href="https://linkedin.com/in/elliotdavies">LinkedIn</a>.
+    </p>
+  </section>
 
-  <ul>
-    {sortedPosts.map((post: CollectionEntry<'posts'>) => (
-      <li>
-        <a href={`/${post.slug}.html`}>{post.data.title}</a>
-      </li>
-    ))}
-  </ul>
+  <section aria-labelledby="posts-heading">
+    <h2 id="posts-heading">Posts and notes</h2>
+    <p>
+      About once a decade I might write a blog post. Here are the most recent:
+    </p>
+
+    <nav aria-label="Blog posts">
+      <ul>
+        {sortedPosts.map((post: CollectionEntry<'posts'>) => (
+          <li>
+            <a href={`/${post.slug}.html`}>{post.data.title}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </section>
 </BaseLayout>

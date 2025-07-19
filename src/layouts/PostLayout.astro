@@ -9,8 +9,12 @@ export interface Props {
 const { title, date } = Astro.props;
 
 const formattedDate = new Intl.DateTimeFormat("en-GB", {
-  dateStyle: "full",
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 }).format(date);
+
 ---
 
 <BaseLayout title={title}>
@@ -22,10 +26,14 @@ const formattedDate = new Intl.DateTimeFormat("en-GB", {
       </p>
     </header>
 
-    <slot />
+    <div class="article-content">
+      <slot />
+    </div>
 
     <footer class="post-footer">
-      <a href="/index.html">Home</a>
+      <nav aria-label="Site">
+        <a href="/index.html"><span aria-hidden="true">← </span>Home</a>
+      </nav>
     </footer>
   </article>
 </BaseLayout>
